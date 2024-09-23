@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola mundo</title>
+    <script src="holaMundo.js"></script>
+    <script>
+        function funcion(){
+            alert("Evento funcion");
+        }
+    </script>
+    <script>
+        alert("interna sin funcion");
+    </script>
+
+</head>
+<body>
+    <h2>Boton de alerta Javascript</h2>
+
+
+    <button onclick="alert('evento boton')">Evento boton</button>
+
+    <button onclick="funcion()">Evento Funcion</button>
+
+
+    <button onclick="externo()"> Evento externo </button>
+    
+</body>
+</html>

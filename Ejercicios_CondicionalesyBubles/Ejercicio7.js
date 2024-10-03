@@ -14,7 +14,7 @@ for (i = num1; i <= num2; i++) {
 alert(numPrimos);
 
 function esPrimo(num) {
-  for (let i = 2; i < num; i++) {
+  for (let i = 2; i < num / 2; i++) {
     if (num % i === 0) {
       return false;
     }

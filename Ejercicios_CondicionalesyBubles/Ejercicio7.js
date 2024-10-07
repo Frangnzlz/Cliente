@@ -1,9 +1,10 @@
 var num1 = 0;
+var num2 = 0;
 
 while(Number.isNaN(num1)|| num1 <= 0){
   num1 = parseInt(prompt("Introduce el primer numero", ""));
 }
-var num2 = 0;
+
 while (num1 >= num2 || Number.isNaN(num2)) {
   var num2 = parseInt(prompt(`Introduce un segundo numero mayor a ${num1}`, ""));
 }

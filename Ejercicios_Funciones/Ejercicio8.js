@@ -1,22 +1,25 @@
 function CaF(){
-    let temp = parseFloat(prompt("Introduce la temperatura en Celcius"));
+    let temp = parseFloat(document.getElementById("temp").value);
+    document.getElementById("temp").value = ""
+    
     if(!Number.isNaN(temp)){
         temp = temp * (9/5) + 32;
-
-        alert(`la temperatura sera de: ${temp.toFixed(2)} Fahrenheit`);
+    
+         document.getElementById("result").innerText = `la temperatura sera de: ${temp.toFixed(2)} Fahrenheit`
     }else  {
-        alert('No has introducido un numero');
+        document.getElementById("result").innerText =  'No has introducido un numero';
     }
 }
 
 function FaC(){
-    let temp = parseFloat(prompt("Introduce la temperatura en Fahrenheit"));
+    let temp = parseFloat(document.getElementById("temp").value);
+    document.getElementById("temp").value = ""
 
     if(!Number.isNaN(temp)){
         temp = (temp - 32) / 1.8;
 
-        alert(`la temperatura sera de: ${temp.toFixed(2)} Celcius`)
+        document.getElementById("result").innerText = `la temperatura sera de: ${temp.toFixed(2)} Celcius`;
     }else  {
-        alert('No has introducido un numero');
+        document.getElementById("result").innerText = 'No has introducido un numero';
     }
 }

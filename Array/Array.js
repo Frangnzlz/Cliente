@@ -76,7 +76,9 @@ function contar(){
             cont++;
         }
     }
-    document.getElementById("result").innerText = cont === 0
+    document.getElementById("result").innerText = Number.isNaN(busc)
+    ? "No has introducido un numero" 
+    : cont === 0
     ? 'No se ha encontrado ese numero'
     : `Ese numero se ha encontrado ${cont} veces en el array`;
     document.getElementById("intr").value = "";

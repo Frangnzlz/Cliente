@@ -7,14 +7,16 @@
     <script src="Array.js"></script>
 </head>
 <body>
-    <p>Introduce el numero del <span id="num">1</span>º del array</p>
+    <p>Introduce el numero del <span id="num">1</span>º del array o el numero que quieras buscar</p>
     <input type="number" name="" id="intr">
+    <input type="button" value="Borrar array" onclick="reiniciar()">
 
     <br>
     <input type="button" value="Introducir" onclick="relArray()">
     <input type="button" value="Calcular" onclick="calSuma()">
     <input type="button" value="buscar Mayor" onclick="mayor()">
-    <input type="button" value="Pares" onclick="esPar()">
+    <input type="button" value="Pares" onclick="mostrarPar()">
+    <input type="button" value="Contar" onclick="contar()">
     
     <p id="result"></p>
 

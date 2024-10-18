@@ -17,9 +17,7 @@ function ej15(){
     }
     console.log(matriz);
 
-    for(let i = 0; i < matriz.length; i++){
-        console.log(matriz[i].join(" "));
-    }
+    mostrarMatriz(matriz);
     return matriz;
 }
 
@@ -43,19 +41,29 @@ function ej17(){
     let tamaño
     do {
         tamaño = parseInt(prompt(`Introduce el tamaño de la matriz(Tiene que ser mayor que 2 y menor que 5)`));
-    } while (tamaño <= 2 || tamaño >= 5);
+    } while (tamaño < 2 || tamaño > 5);
     
-    let matriz = [];
+    let primerMatriz = [];
     let factor = 1;
        
     for(let i = 0; i < tamaño; i++){
-        matriz[i] = [];
+        primerMatriz[i] = [];
         for(let j = 0; j <tamaño;j++){
-            matriz[i][j].push(random(1,21));
+            primerMatriz[i].push(random(1,21));
         }
     }
-
+    console.log("primera matriz");
+    mostrarMatriz(primerMatriz)
+    let segundaMatriz = [];
     
+    for(let i = 0; i < primerMatriz.length; i++){
+        segundaMatriz[i] = [];
+        for(let j = 0; j <primerMatriz[i].length;j++){
+            segundaMatriz[i].push(primerMatriz[j][i]);
+        }
+    }
+    console.log("segunda matriz");
+    mostrarMatriz(segundaMatriz);
 
 }
 
@@ -64,4 +72,8 @@ function random(min, max){
     return Math.floor(Math.random()*((max)-min) + min);
 }
 
-
+function mostrarMatriz(matriz) {
+    for(let i = 0; i < matriz.length; i++){
+        console.log(matriz[i].join(" "));
+    }
+}

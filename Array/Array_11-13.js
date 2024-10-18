@@ -8,20 +8,27 @@ function ej11(){
 
     array.unshift(prompt("Introduce una nueva palabra en el array"));
 
-    listar(array, ", ");
+    console.log(array.join(",")) ;
 }
 
 function ej12(){
-    let array1 = ["Ray","Andres", "Jose", "Dani"];
+    let array1 = ["Ray","Andres", "Jose","Ray","Ray",  "Dani"];
     let array2 = ["Miguel", "Dani", "Jose", "Ivan"];
+
+
+
+
 
     console.log(buscarDistintos(array1,array2))
 }
-function buscarDistintos(primerArray, segundoArray){
+function buscarDistintos([...primerArray], [...segundoArray]){
     var array1 = [];
     var array2 = [];
     let i = 0;
-    
+    limpiarRepetidosArray(primerArray);
+    limpiarRepetidosArray(segundoArray);
+
+
     while(i < primerArray.length || i < segundoArray.length){
 
         if(i < primerArray.length){
@@ -53,6 +60,25 @@ function buscarDistintos(primerArray, segundoArray){
     // }
 
     return array1.concat(array2);
+}
+
+function limpiarRepetidosArray(array){
+    for(let i = 0; i < array.length; i++){
+        for(let j = i+1; j < array.length;j++ ){
+            if(array[i] == array[j]){
+                eliminarElemento(array, array[i]);
+                j--;
+            }
+        }
+    }
+}
+function eliminarElemento(array, elemento){
+    for(let j = 0; j < array.length;j++ ){
+        if(elemento == array[j]){
+            array.splice(j, 1);
+            j--;
+        }
+    }
 }
 
 function buscarElemento(elemento, array){

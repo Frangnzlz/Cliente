@@ -62,13 +62,5 @@ function ej7(){
         array.push(elemento);    
     } while (confirm("Introducir un elemento al array"));
 
-    listar(array, "-");
-}
-function listar(miArray, separador) {
-    let lista = "";
-    for(let i = 0; i < miArray.length; i++){
-        lista += i< miArray.length-1 ? `${miArray[i]}${separador}` :miArray[i]; 
-    }
-    console.log(lista);
-
+    console.log(array.join("-")) ;
 }

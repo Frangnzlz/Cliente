@@ -64,6 +64,57 @@ function buscarElemento(elemento, array){
     return false;
 }
 
+function ej13(){
+    let puntuaciones = [56, 74, 23, 89, 95, 12, 67, 88, 45, 33, 76];
+    console.log(puntuaciones);
+
+
+    for(let i = 0; i < 3; i++){
+        eliminarMenor(puntuaciones);
+    }
+    console.log(puntuaciones);
+
+    for(let i = 1; i <= 3; i++){
+        let number = parseInt(prompt(`añade una puntuación en la posisción ${i*2}`));
+        if (Number.isNaN(number)){
+            alert("No has introducido un numero");
+            i--;
+        }else{
+            puntuaciones.splice(i*2, 0, number);
+        }
+
+    }
+    console.log(puntuaciones);
+
+    while(true){
+        let numEliminados = parseInt(prompt(`Cuantos elementos quieres eliminar`));
+        let posicion = parseInt(prompt(`Desde que posición`));
+
+        if(Number.isNaN(numEliminados) || Number.isNaN(posicion)){
+            alert("Uno de los numeros introducidos no es un numero");
+        }else{
+            puntuaciones.splice(posicion, numEliminados);
+            break;
+        }
+    }
+
+    console.log(puntuaciones);
+
+
+
+
+}
+function eliminarMenor(puntuaciones){
+    let min = Number.MAX_SAFE_INTEGER
+    let index;
+    for(let i = 0; i < puntuaciones.length; i++){
+        if(puntuaciones[i] < min){
+            min = puntuaciones[i];
+            index = i;
+        }
+    }
+    return puntuaciones.splice(index, 1);
+}
 
 
 

@@ -12,8 +12,8 @@ function ej11(){
 }
 
 function ej12(){
-    let array1 = ["Ray","Andres", "Jose","Ray","Ray",  "Dani"];
-    let array2 = ["Miguel", "Dani", "Jose", "Ivan"];
+    let array1 = [1, 2, 2, 1, 1,  3];
+    let array2 = [4,5,11,3, 3, 2, 5, 6,12,6];
 
 
 
@@ -22,27 +22,48 @@ function ej12(){
     console.log(buscarDistintos(array1,array2))
 }
 function buscarDistintos([...primerArray], [...segundoArray]){
-    var array1 = [];
-    var array2 = [];
-    let i = 0;
-    limpiarRepetidosArray(primerArray);
-    limpiarRepetidosArray(segundoArray);
-
-
-    while(i < primerArray.length || i < segundoArray.length){
-
-        if(i < primerArray.length){
-            if(!(buscarElemento(primerArray[i], segundoArray))){
-                array1.push(primerArray[i]);
+   let array = primerArray.concat(segundoArray);
+   
+   
+    // var array1 = [];
+    // var array2 = [];
+    // let i = 0;
+    console.log(array)
+    for (let i = 0; i < array.length; i++){
+        let elemento = array[i];
+        let bool = true;
+        for(let j = i+1; j < array.length; j++){
+            if(elemento == array[j]){
+                array.splice(j, 1);
+                j--;
+                if(bool){
+                    array.splice(i,1);
+                    bool = false;
+                    j--;
+                    i--;
+                }
             }
         }
-        if(i < segundoArray.length){
-            if(!(buscarElemento(segundoArray[i], primerArray))){
-                array2.push(segundoArray[i]);
-            }
-        }
-        i++;
     }
+
+    // limpiarRepetidosArray(primerArray);
+    // limpiarRepetidosArray(segundoArray);
+
+
+    // while(i < primerArray.length || i < segundoArray.length){
+
+    //     if(i < primerArray.length){
+    //         if(!(buscarElemento(primerArray[i], segundoArray))){
+    //             array1.push(primerArray[i]);
+    //         }
+    //     }
+    //     if(i < segundoArray.length){
+    //         if(!(buscarElemento(segundoArray[i], primerArray))){
+    //             array2.push(segundoArray[i]);
+    //         }
+    //     }
+    //     i++;
+    // }
 
 
     // for(let i = 0; i < primerArray.length; i++){
@@ -59,7 +80,7 @@ function buscarDistintos([...primerArray], [...segundoArray]){
 
     // }
 
-    return array1.concat(array2);
+    return array;
 }
 
 function limpiarRepetidosArray(array){
@@ -67,7 +88,6 @@ function limpiarRepetidosArray(array){
         for(let j = i+1; j < array.length;j++ ){
             if(array[i] == array[j]){
                 eliminarElemento(array, array[i]);
-                j--;
             }
         }
     }

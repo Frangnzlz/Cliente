@@ -85,7 +85,6 @@ function likes(array){
             return `Nobody likes this`;
         case 1:
             return `${array[0]} likes this`
-    
         case 2:
             return `${array[0]} and ${array[1]} like this`    
         case 3:

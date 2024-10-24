@@ -84,31 +84,31 @@ console.log("subArray extraido: "+subArray);  // Resultado: [3, 4, 5]
 
 
 /*****split()******/
-var cadenaMeses = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec";
-var arrayDeCadenas = cadenaMeses.split (',');
-console.log (arrayDeCadenas);
+var cadenaADNMeses = "Jan,Feb,Mar,Apr,May,Jun,Jul,Aug,Sep,Oct,Nov,Dec";
+var arrayDecadenaADNs = cadenaADNMeses.split (',');
+console.log (arrayDecadenaADNs);
 
 //Ejemplo de uso de split
 //Parseo de respuestas de APIS - quiero extraer el dato de la clave
-var cadenaAPI = "clave:4567";
-var arraycadenaAPI = cadenaAPI.split(':');
-var clave = arraycadenaAPI [1];
+var cadenaADNAPI = "clave:4567";
+var arraycadenaADNAPI = cadenaADNAPI.split(':');
+var clave = arraycadenaADNAPI [1];
 console.log (`la clave es ${clave}`);
 
 //******join ()******/
 vocales = ['a', 'e', 'i', 'o', 'u'];
-//Transformo el array en cadena uniendo con el caracter indicado
-var cadena1 = vocales.join(',');
-var cadena2 = vocales.join('-');
-var cadena3 = vocales.join(' ');
-console.log (cadena1);
-console.log (cadena2);
-console.log (cadena3);
+//Transformo el array en cadenaADN uniendo con el caracter indicado
+var cadenaADN1 = vocales.join(',');
+var cadenaADN2 = vocales.join('-');
+var cadenaADN3 = vocales.join(' ');
+console.log (cadenaADN1);
+console.log (cadenaADN2);
+console.log (cadenaADN3);
 
-//Vuelvo a transformar el array de meses en cadena 
+//Vuelvo a transformar el array de meses en cadenaADN 
 //pero separando con -
-var nuevaCadenaMeses=arrayDeCadenas.join('-');
-console.log(nuevaCadenaMeses);
+var nuevacadenaADNMeses=arrayDecadenaADNs.join('-');
+console.log(nuevacadenaADNMeses);
 
 
 //******reverse () ****/
@@ -138,7 +138,7 @@ console.log (mix);
 
 //Spread operator para transformar arrays
 let frase ="Es viernes al fin!";
-//Queremos transformar la cadena en un array de caracteres
+//Queremos transformar la cadenaADN en un array de caracteres
 let arrayCaracteres = [...frase];
 console.log (arrayCaracteres);
 

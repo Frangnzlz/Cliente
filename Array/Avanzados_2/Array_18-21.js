@@ -93,3 +93,60 @@ function likes(array){
             return `${array[0]}, ${array[1]} and ${array.length-2} like this`;    
     }
 }
+
+
+function ej22(){
+    let num = 0;
+    let i = 0;
+    let indice = [];
+    let array = [];
+    let inicio = 0, final = 0;
+    let aux = [];
+
+    do{
+        num = parseInt(prompt(`Introduce el numero ${i+1}, deberá estar comprendido entre 0 y 99`));
+
+        if(!Number.isNaN(num) || num>=0 && num<=99){
+            array[i] = num;
+            indice[i] = i;
+            i++;
+        }else{
+            alert(`No has introducido un numero valido`);
+        }
+    }while(i  < 10);
+
+
+
+    console.log(indice);
+    console.log(array);
+
+    do{
+        inicio = parseInt(prompt(`Introduce el numero inicial, ha de estar comprendido entre 0 y 9`));
+        if(!Number.isNaN(inicio) && inicio >= 0 && inicio < 9){
+            final = parseInt(prompt(`Introduce el numero final, ha de estar comprendido entre ${inicio} y 9`));
+        }else{
+            alert(`El numero inicial no es valido`);
+        }
+    }while( Number.isNaN(inicio)
+        ||Number.isNaN(final)
+        ||inicio < 0
+        ||inicio > 9
+        ||final <= inicio
+        ||final > 9
+    )
+
+    for(let i = 0; i < array.length; i++){
+        if(i == 0){
+            aux[i] = array[9];
+        }else if(i){
+            aux[i] = array[i+1];
+        }
+    }
+
+
+    console.log(indice);
+    console.log(aux);
+
+
+
+}

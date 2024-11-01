@@ -23,6 +23,7 @@ function ADNtoARN(){
     }
     alert(`La cadena de ARN será ${cadenaARN} para la cadena de ADN ${cadenaADN}`)
 }
+
 function ej19(){
     let lista = ["Luis", "Estela", "Ángel", "Enya", "Jose Antonio"];
     let lista2 = ["Joaquín", "Manuel", "Carlos"];
@@ -30,6 +31,7 @@ function ej19(){
     console.log(`Tus amigos de la lista ${lista} son ${listaAmigos(lista)}`)
     console.log(`Tus amigos de la lista ${lista2} son ${listaAmigos(lista2)}`)
 }
+
 function listaAmigos(array){
     let amigos = Array();
 
@@ -41,6 +43,7 @@ function listaAmigos(array){
 
     return amigos;
 }
+
 function ej20(){
     let colores = ["red", "yellow", "green", "white", "blue", "brown", "pink", "black"];  
     let cantElementos = 8;
@@ -64,7 +67,6 @@ function ej20(){
     console.log(arrayUsuario);
 }
 
-
 function ej21(){
     caso1 = []
     caso2 = ["Peter"]
@@ -79,13 +81,13 @@ function ej21(){
     console.log(`caso 3 personas: ${likes(caso4)}`);
     console.log(`caso 4 o mas personas: ${likes(caso5)}`);
 }
+
 function likes(array){
     switch (array.length) {
         case 0:
             return `Nobody likes this`;
         case 1:
             return `${array[0]} likes this`
-    
         case 2:
             return `${array[0]} and ${array[1]} like this`    
         case 3:
@@ -94,4 +96,48 @@ function likes(array){
         default:
             return `${array[0]}, ${array[1]} and ${array.length-2} like this`    
     }
+}
+
+function ej22(){
+    let inicial = 0;
+    let final = 0;
+
+    let array = [];
+    let num = 0;
+    let i = 0;
+    let indice = [];
+    do {
+        num = parseInt(prompt(`Introduce el ${i+1} en el array (Debe estar comprendido entre 0 y 99)`));
+        if(num >= 0 && num <=99){
+            array.push(num);
+            i++;
+        }else{
+            alert(`No has introducido un numero valido`)
+        }
+
+    } while (i < 10);
+    for(let i = 0; i < 10; i++){
+        indice.push(i);
+    }
+    do {
+        inicial = parseInt(prompt(`Introduce la posición inicial entre 0 y 9`));
+        final = parseInt(prompt(`Introduce la posición inicial entre 0 y 9 y mayor que ${inicial}`));
+        
+    } while (inicial >= final 
+        ||Number.isNaN(inicial)
+        ||Number.isNaN(final)
+        ||final <0
+        ||final >9 
+        ||inicial <0
+        ||inicial >9
+    );
+    console.log(indice);
+    console.log(array);
+
+    let temp = array[final];
+    array[final] = array[inicial];
+    array[inicial] = temp;
+    
+    console.log(indice);
+    console.log(array);
 }

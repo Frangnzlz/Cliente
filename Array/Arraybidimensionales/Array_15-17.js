@@ -7,7 +7,7 @@ function ej15(){
     let matriz = [];
     let factor = 1;
     
-    
+
     for(let i = 0; i < tamaño; i++){
         matriz[i] = [];
         for(let j = 0; j <tamaño;j++){
@@ -44,7 +44,6 @@ function ej17(){
     } while (tamaño < 2 || tamaño > 5);
     
     let primerMatriz = [];
-    let factor = 1;
        
     for(let i = 0; i < tamaño; i++){
         primerMatriz[i] = [];
@@ -69,11 +68,20 @@ function ej17(){
 
 
 function random(min, max){
-    return Math.floor(Math.random()*((max)-min) + min);
+    return Math.floor(Math.random()*(max-min) + min);
 }
 
 function mostrarMatriz(matriz) {
+    let txt = ""
     for(let i = 0; i < matriz.length; i++){
-        console.log(matriz[i].join(" "));
+        for(let j = 0; j < matriz.length; j++){
+            if(matriz[i][j] < 10){
+                txt += "0" + matriz[i][j] + " ";
+            }else{
+                txt += matriz[i][j] + " ";
+            }    
+        }  
+        txt += "\n";
     }
+    console.log(txt);
 }

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="08-11.js"></script>
+
+    <style>
+        .estiloOriginal{
+            color: blue;
+            font-size: 16px;
+        }
+        .nuevoEstilo{
+            color: red;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <table id="mitabla" height = "200px" width="300px" border="2px">
+        <tr>
+            <td>celda1</td>
+            <td>celda2</td>
+        </tr>
+
+    </table>
+
+    <button onclick="modificarTabla()">modificar tabla</button>
+
+
+    <p id="text"><b>Este es el texto original</b></p>
+
+
+    <button onclick="cambiarTexto()">cambiar texto</button>
+
+    <p id="text2"><b>Este es el contenido que se va a copiar</b></p>
+    <button onclick="copiarTexto()">Copiar</button>
+    <p id="destino">Aquí aparecera el contenido copiado</p>
+
+
+    <p id="cambiar" class="estiloOriginal">Nuevo parrafo con estilo</p>
+    <input type="checkbox" name="cambio" id="cambio" hidden>
+    <button onclick="cambiarEstilo()">cambiar</button>
+
+
+</body>
+</html>

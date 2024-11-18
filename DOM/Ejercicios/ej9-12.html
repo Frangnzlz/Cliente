@@ -9,6 +9,21 @@
             height: 100px;
             width: 100px;
         }
+        .ej11{
+            height: 100px;
+            width: 300px;
+        }
+        #A{
+            background-color: black;
+        }
+        #B{
+            background-color: aquamarine;
+            visibility: hidden;
+            /* display: none; */
+        }
+        #C{
+            background-color: tomato;
+        }
 
     </style>
     <script src="ej9-12.js"></script>
@@ -22,6 +37,20 @@
     <div class="ej10" id="b" onmouseover="cambiarFondo(this)" onmouseout = "devolverFondo()"></div>
     <div class="ej10" id="c" onmouseover="cambiarFondo(this)" onmouseout = "devolverFondo()"></div>
 
+    <h1>Ejercicio 11</h1>
+    <div class="ej11" id="A" onmouseover="mostrarDiv()">Soy el div 1</div>
+    <div class="ej11" id="B">Soy el div 2</div>
+    <div class="ej11" id="C">Soy el div 3</div>
+
+    <h1>Ejercicio 13</h1>
+    <p onclick="mostrar()" id="mostrar">Mostrar</p>
+    <p id="spoiler" hidden>Mensaje oculto</p>
+    <p hidden id="ocultar" onclick="ocultar()">Ocultar</p>
+
+    <h1>Ejercicio 12</h1>
+    <button value="5" onclick="desplazar(this, 'derecha')" id="izquierda">Izquierda</button> <button value="5" onclick="desplazar(this, 'izquierda')" id="derecha">Derecha</button>
+    <button onclick="devolverImagen()">reset</button>
+    <div><img src="imagen/2.jpg" alt="2" style="position: absolute; left: 0px;" id="imagen"></div>
 
 </body>
 </html>

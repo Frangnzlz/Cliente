@@ -43,4 +43,6 @@ window.onload = function(){
 
     window.cambiarImagen = cambiarImagen;
     window.devolverImagen = devolverImagen;
+
+
 }

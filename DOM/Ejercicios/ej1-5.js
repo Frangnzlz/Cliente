@@ -172,4 +172,13 @@ window.onload = function(){
     window.siguiente = siguiente;
     window.anterior = anterior;
 
+    function cambiarClase(parrafo){
+        if(parrafo.className == "uno"){
+            parrafo.className = "dos";
+        }else{
+            parrafo.className = "uno";
+        }
+    }
+    window.cambiarClase = cambiarClase;
+
 }

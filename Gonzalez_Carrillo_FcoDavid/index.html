@@ -3,13 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Practica 2</title>
     <script src="miScript.js"></script>
+    <style>
+        .estilo1{
+            color: blue ;
+            background-color: white;
+            font-weight: normal;
+        }
+        .estilo2{
+            color: white;
+            background-color: black;
+            font-weight: bold;
+        }
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
 </head>
 <body>
-    <button onclick="Ejercicio1()">Ejercicio 1</button>
-    <button onclick="Ejercicio2()">Ejercicio 2</button>
-    <button onclick="Ejercicio3()">Ejercicio 3</button>
-    <button onclick="Ejercicio4()">Ejercicio 4</button>
+    <h2>Ejercicio 1</h2>
+    <a href="#inicio" id="inicio" class="enlace">Inicio</a>
+    <a href="#servicios" id="servicios" class="enlace">Servicios</a>
+    <a href="#contacto" id="contacto" class="enlace">Contacto</a>
+    <button onclick="actualizarEnlace()">Cambiar enlaces</button>
+    <button onclick="resaltarServicios()">Resaltar</button>
+
+    <h2>Ejercicio 2</h2>
+    <p class="parrafo" id="parrafo" onload="cambiarParrafo(this)">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi voluptates sapiente magnam similique perspiciatis repellendus pariatur reiciendis debitis quam, ad, sequi fugit qui necessitatibus provident doloremque ratione fuga veniam. Delectus.</p>
+    <button onclick="cambiarClase()">Cambiar Clase</button>
+    <button onclick="cambiarColor()">Cambiar Color</button>
+
+    <h2>Ejercicio 3</h2>
+
+    <table border="1" width="200px" height="300px">
+        <tr>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+        </tr>
+        <tr>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+        </tr>
+        <tr>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+        </tr>
+        <tr>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+            <td onclick="cambiarCelda(this)">Pendiente</td>
+        </tr>
+    </table>
+    
+    <h2>Ejercicio 4</h2>
+    <!-- Incluimos una clase para poder llamarles en JS -->
+    <img src="Fotos/CSS.png" alt="" class="ej4" style="display: block;">
+    <img src="Fotos/HTML.png" alt="" class="ej4" style="display : none;">
+    <img src="Fotos/JS.png" alt="" class="ej4" style="display : none;">
+    <img src="Fotos/PHP.png" alt="" class="ej4" style="display : none;">
+    <img src="Fotos/Python.png" alt="" class="ej4" style="display : none;">
+    <!-- inicialiacimos ambos botones con un valor (-1 para anterior, 1 para siguiente)
+     que sera lo que utilizaremos para iterar y un input:hidden que usaremos para saber la 
+     posición en la que nos encontramos -->
+    <button onclick="desplazarCarrusel(this)" id="anterior" value="-1">anterior</button>
+    <button onclick="desplazarCarrusel(this)" id="siguiente" value = "1">siguiente</button>
+    <input type="hidden" name="cont" value="0">
+
 </body>
 </html>

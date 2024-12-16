@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 14</title>
+    <script src="Ejercicio_14.js"></script>
+    <style>
+        div, img{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div onmouseover="iniciarCarrusel()" onmouseout="pararCarrusel()">
+        <img src="Fotos/CSS.png" alt="" class="ej4" style="display: block;">
+        <img src="Fotos/HTML.png" alt="" class="ej4" style="display : none;">
+        <img src="Fotos/JS.png" alt="" class="ej4" style="display : none;">
+        <img src="Fotos/PHP.png" alt="" class="ej4" style="display : none;">
+        <img src="Fotos/Python.png" alt="" class="ej4" style="display : none;">
+    </div>
+    <!-- inicialiacimos ambos botones con un valor (-1 para anterior, 1 para siguiente)
+     que sera lo que utilizaremos para iterar y un input:hidden que usaremos para saber la 
+     posición en la que nos encontramos -->
+    <input type="hidden" name="cont" value="0">
+</body>
+</html>

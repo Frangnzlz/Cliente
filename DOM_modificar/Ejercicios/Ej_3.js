@@ -24,6 +24,7 @@ window.onload = function(){
     function generarTabla(filas, columnas){
         let tabla = document.createElement("table");
         tabla.setAttribute("border", "1");
+        tabla.setAttribute("class", "tabla");
 
         for(let i = 0; i < filas; i++){
             let fila = document.createElement("tr");

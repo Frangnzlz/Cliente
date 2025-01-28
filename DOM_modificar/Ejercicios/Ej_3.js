@@ -32,6 +32,17 @@ window.onload = function(){
                 let columna = document.createElement("td");
                 let texto = document.createTextNode(i+1);
                 columna.appendChild(texto);
+                columna.addEventListener("click", function(){
+                    let style = window.getComputedStyle(columna)
+
+                    if(style.backgroundColor == "rgb(0, 0, 255)"){
+                        columna.style.backgroundColor = "rgb(255, 255, 255)";
+                    }else{
+                        columna.style.backgroundColor = "rgb(0, 0, 255)";
+                    }
+
+
+                })
                 fila.appendChild(columna);
             }
             tabla.appendChild(fila)
@@ -39,6 +50,7 @@ window.onload = function(){
         return tabla;
 
     }
+
 
     window.añadirTabla = añadirTabla;
 }

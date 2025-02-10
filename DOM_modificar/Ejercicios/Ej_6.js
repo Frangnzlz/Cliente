@@ -12,7 +12,7 @@ window.onload = function (){
     }
 
 
-    function* createArticle(img){
+    function* crearArticulo(img){
         
         for(let i = 0; i < img.length; i++){
             let article = document.createElement("article");
@@ -36,14 +36,14 @@ window.onload = function (){
         }
     }
 
-    function createSection(){
+    function crearSeccion(){
         let img = document.querySelectorAll(".selected")
-        for(const value of createArticle(img)){
+        for(const value of crearArticulo(img)){
             console.log(value);
             section.appendChild(value);
         }
         
         document.write(section.innerHTML);
     }
-    window.createSection = createSection;
+    window.crearSeccion = crearSeccion;
 }

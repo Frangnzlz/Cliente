@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios Formularios</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Ejercicios Formularios</h1>
+
+    <!-- Ejercicio 1 -->
+    <div class="container">
+        <h2>Ejercicio 1: Copiar Texto</h2>
+        <input type="text" id="campo1" placeholder="Escribe aquí">
+        <input type="text" id="campo2" readonly>
+    </div>
+
+    <!-- Ejercicio 2 -->
+    <div class="container">
+        <h2>Ejercicio 2: Checkbox y Textarea</h2>
+        <label><input type="checkbox" class="check" value="Leer"> Leer</label>
+        <label><input type="checkbox" class="check" value="Correr"> Correr</label>
+        <label><input type="checkbox" class="check" value="Música"> Música</label>
+        <textarea id="resultado" rows="4" cols="30" readonly></textarea>
+    </div>
+
+    <!-- Ejercicio 3 -->
+    <div class="container">
+        <h2>Ejercicio 3: Conversión de Moneda</h2>
+        <input type="number" id="cantidad" placeholder="Cantidad">
+        <select id="conversion">
+            <option value="usd-eur">USD a EUR</option>
+            <option value="eur-usd">EUR a USD</option>
+        </select>
+        <button onclick="convertir()">Convertir</button>
+        <p id="resultadoConversion"></p>
+    </div>
+
+    <script>
+        // Ejercicio 1
+        document.getElementById('campo1').addEventListener('input', function() {
+            document.getElementById('campo2').value = this.value;
+        });
+
+        // Ejercicio 2
+        document.querySelectorAll('.check').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                let seleccionados = Array.from(document.querySelectorAll('.check:checked'))
+                                       .map(chk => chk.value).join(', ');
+                document.getElementById('resultado').value = seleccionados;
+            });
+        });
+
+        // Ejercicio 3
+        function convertir() {
+            let cantidad = parseFloat(document.getElementById('cantidad').value);
+            let conversion = document.getElementById('conversion').value;
+            let resultado = 0;
+            if (conversion === 'usd-eur') resultado = cantidad * 0.83;
+            else resultado = cantidad / 0.83;
+            document.getElementById('resultadoConversion').textContent = `Resultado: ${resultado.toFixed(2)}`;
+        }
+    </script>
+</body>
+</html>
